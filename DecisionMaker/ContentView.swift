@@ -8,20 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var first_decision: String = ""
-    @State private var second_decision: String = ""
+    @State private var first_option: String = ""
+    @State private var second_option: String = ""
     @State private var decision: String = "Decision will be shown here"
     
     var body: some View {
         VStack {
-            TextField("First decision", text: $first_decision)
+            TextField("First option", text: $first_option)
                 .padding(.all)
-            TextField("Second decision", text: $second_decision)
+            TextField("Second option", text: $second_option)
                 .padding(.all)
             Button(action: {
-                decision = [first_decision, second_decision, "Fuck you"].randomElement()!
+                decision = [first_option, second_option, "Fuck you"].randomElement()!
             }) {
-                Text("Choose Decision")
+                Text("Choose")
             }
             .padding(.vertical)
             
