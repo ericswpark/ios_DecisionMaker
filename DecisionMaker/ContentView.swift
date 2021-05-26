@@ -18,18 +18,26 @@ struct ContentView: View {
                 .padding(.all)
             TextField("Second option", text: $second_option)
                 .padding(.all)
-            Button(action: {
-                decision = [first_option, second_option, "Fuck you"].randomElement()!
-            }) {
-                Text("Choose")
+            HStack{
+                Button(action: {
+                    decision = [first_option, second_option, "Fuck you"].randomElement()!
+                }) {
+                    Text("Choose")
+                }
+                .padding(.trailing)
+                Button(action: {
+                    decision = "Decision will be shown here"
+                    first_option = ""
+                    second_option = ""
+                }) {
+                    Text("Clear all")
+                }
+                .padding(.leading)
             }
             .padding(.vertical)
             
-            
-            
-            
             Text("\(decision)")
-                .padding(.top, 20.0)
+                .padding(.top, 80.0)
         }
     
     }
